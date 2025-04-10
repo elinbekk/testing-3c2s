@@ -35,23 +35,28 @@ public class PostAddingTest extends TestBase {
         verifyEmptyPostErrorDisplayed();
     }
 
-    private void openPostPage() {
-        driver.get("https://elinbek.livejournal.com/1519.html?newpost=1");
-    }
 
     private void navigateToPostCreation() {
-        driver.findElement(By.cssSelector("a.b-flatbutton.b-flatbutton-simple[href='https://www.livejournal.com/post']")).click();
+        String buttonSelector = "a.b-flatbutton.b-flatbutton-simple[href='https://www.livejournal.com/post']";
+        driver.findElement(By.cssSelector(buttonSelector)).click();
+    }
+
+    private void openPostPage() {
+        String URL = "https://www.livejournal.com/post";
+        driver.get(URL);
     }
 
     private void fillPostTitle(String title) {
-        driver.findElement(By.xpath("//div[@id='content']/div/div/div[2]/textarea")).click();
-        driver.findElement(By.xpath("//div[@id='content']/div/div/div[2]/textarea")).clear();
-        driver.findElement(By.xpath("//div[@id='content']/div/div/div[2]/textarea")).sendKeys(title);
+        String textareaXpath = "//div[@id='content']/div/div/div[2]/textarea";
+        driver.findElement(By.xpath(textareaXpath)).click();
+        driver.findElement(By.xpath(textareaXpath)).clear();
+        driver.findElement(By.xpath(textareaXpath)).sendKeys(title);
     }
 
     private void fillPostContent(String content) {
-        driver.findElement(By.cssSelector("div.DraftEditor-root div.DraftEditor-editorContainer div.public-DraftEditor-content")).click();
-        driver.findElement(By.cssSelector("div.DraftEditor-root div.DraftEditor-editorContainer div.public-DraftEditor-content")).sendKeys(content);
+        String selector = "div.DraftEditor-root div.DraftEditor-editorContainer div.public-DraftEditor-content";
+        driver.findElement(By.cssSelector(selector)).click();
+        driver.findElement(By.cssSelector(selector)).sendKeys(content);
     }
 
     private void publishPost() {
@@ -60,30 +65,35 @@ public class PostAddingTest extends TestBase {
     }
 
     private void attemptToPublishEmptyPost() {
-        driver.findElement(By.xpath("//div[@id='content']/div/div/div[2]/textarea")).click();
-        driver.findElement(By.cssSelector("div.DraftEditor-root div.DraftEditor-editorContainer div.public-DraftEditor-content")).click();
+        String contentSelector = "div.DraftEditor-root div.DraftEditor-editorContainer div.public-DraftEditor-content";
+        String titleSelector = "//div[@id='content']/div/div/div[2]/textarea";
+        driver.findElement(By.xpath(titleSelector)).click();
+        driver.findElement(By.cssSelector(contentSelector)).click();
     }
 
     private void verifyPostPublishedSuccessfully(String expectedTitle, String expectedContent) {
-        By postTitle = By.cssSelector("h1.aentry-post__title span.aentry-post__title-text");
-        Assert.assertEquals("title", driver.findElement(postTitle).getText());
-        Assert.assertTrue(driver.findElement(By.cssSelector("div.aentry-post__text--view")).getText().contains("content"));
+        String titleSelector = "h1.aentry-post__title span.aentry-post__title-text";
+        String contentSelector = "div.aentry-post__text--view";
+        By postTitle = By.cssSelector(titleSelector);
+        Assert.assertEquals(expectedTitle, driver.findElement(postTitle).getText());
+        Assert.assertTrue(driver.findElement(By.cssSelector(contentSelector)).getText().contains(expectedContent));
     }
     private void verifyEmptyPostErrorDisplayed() {
+        String errorMessageXpath = "//div[contains(text(), 'Нельзя опубликовать пустую запись')]";
         WebElement errorMessage = driver.findElement(
-                By.xpath("//div[contains(text(), 'Нельзя опубликовать пустую запись')]")
+                By.xpath(errorMessageXpath)
         );
         Assert.assertTrue(errorMessage.isDisplayed());
     }
-
 
     private void openMainPage() {
         driver.get("https://www.livejournal.com/");
     }
 
     private void clickOnLoginButton() {
+        String loginXpath = "//a[contains(@href, 'https://www.livejournal.com/login.bml?returnto=https%3A%2F%2Fwww.livejournal.com%2F&ret=1')]";
 //        driver.findElement(By.cssSelector("a.s-header-item__link.s-header-item__link--login")).click();
-        driver.findElement(By.xpath("//a[contains(@href, 'https://www.livejournal.com/login.bml?returnto=https%3A%2F%2Fwww.livejournal.com%2F&ret=1')]")).click();
+        driver.findElement(By.xpath(loginXpath)).click();
     }
 
     private void enterCredentionals() {

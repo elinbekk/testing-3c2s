@@ -1,5 +1,6 @@
 package com.example;
 
+import com.example.model.UserData;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.*;

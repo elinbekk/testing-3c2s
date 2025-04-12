@@ -4,11 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e136772-ed77-4818-a6fb-529e55e1fcc6" name="Changes" comment="" />
+    <list default="true" id="6e136772-ed77-4818-a6fb-529e55e1fcc6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/testing_3c2s.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/UntitledTestSuite/UntitledTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/UntitledTestSuite/UntitledTestCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/UntitledTestSuite/UntitledTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/UntitledTestSuite/UntitledTestCase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testing-task-02-2025-04-04/src/test/java/com/example/AuthorizationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../testing-task-02-2025-04-04/src/test/java/com/example/AuthorizationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testing-task-02-2025-04-04/src/test/java/com/example/PostAddingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../testing-task-02-2025-04-04/src/test/java/com/example/PostAddingTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testing-task-02-2025-04-04/src/test/java/com/example/PostData.java" beforeDir="false" afterPath="$PROJECT_DIR$/../testing-task-02-2025-04-04/src/test/java/com/example/model/PostData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testing-task-02-2025-04-04/src/test/java/com/example/UserData.java" beforeDir="false" afterPath="$PROJECT_DIR$/../testing-task-02-2025-04-04/src/test/java/com/example/model/UserData.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
@@ -24,6 +37,9 @@
     "Maven.KR-exported-java-junit-maven-project [clean].executor": "Run",
     "Maven.KR-exported-java-junit-maven-project [install].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/home/elina/testing_3c2s/testing-task-01-2025-04-04",
     "node.js.detected.package.eslint": "true",
@@ -69,6 +85,7 @@
       <workItem from="1743866957395" duration="71000" />
       <workItem from="1744287582588" duration="660000" />
       <workItem from="1744290800712" duration="695000" />
+      <workItem from="1744442247175" duration="1127000" />
     </task>
     <servers />
   </component>

@@ -1,5 +1,7 @@
 package com.example;
 
+import com.example.model.PostData;
+import com.example.model.UserData;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -18,21 +20,13 @@ public class PostAddingTest extends TestBase {
 
     @Test
     public void postAddingSuccessCase() {
-        PostData postData = new PostData("title", "content");
+        PostData postData = new PostData("test", "test");
         navigateToPostCreation();
         fillPostContent(postData.getTitle());
         fillPostTitle(postData.getContent());
         publishPost();
         openPostPage();
         verifyPostPublishedSuccessfully(postData.getTitle(), postData.getContent());
-    }
-
-    @Test
-    public void postAddingFailureCase(){
-        navigateToPostCreation();
-        attemptToPublishEmptyPost();
-        driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Виден всем'])[1]/following::span[1]")).click();
-        verifyEmptyPostErrorDisplayed();
     }
 
 
@@ -75,9 +69,11 @@ public class PostAddingTest extends TestBase {
         String titleSelector = "h1.aentry-post__title span.aentry-post__title-text";
         String contentSelector = "div.aentry-post__text--view";
         By postTitle = By.cssSelector(titleSelector);
+
         Assert.assertEquals(expectedTitle, driver.findElement(postTitle).getText());
         Assert.assertTrue(driver.findElement(By.cssSelector(contentSelector)).getText().contains(expectedContent));
     }
+
     private void verifyEmptyPostErrorDisplayed() {
         String errorMessageXpath = "//div[contains(text(), 'Нельзя опубликовать пустую запись')]";
         WebElement errorMessage = driver.findElement(
@@ -110,6 +106,16 @@ public class PostAddingTest extends TestBase {
     private void submitLoginButton() {
         driver.findElement(By.name("action:login")).click();
     }
+
+    @Test
+    public void postAddingFailureCase() {
+        navigateToPostCreation();
+        attemptToPublishEmptyPost();
+        driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Виден всем'])[1]/following::span[1]")).click();
+        verifyEmptyPostErrorDisplayed();
+    }
+
+
 }
 
 

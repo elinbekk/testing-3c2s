@@ -39,6 +39,8 @@ public class UntitledTestCase {
         driver.findElement(By.name("action:login")).click();
 
         Assert.assertTrue(driver.findElement(By.cssSelector("a.s-header-item__link.s-header-item__link--user")).isDisplayed());
+        Assert.assertEquals("ELINBEK", driver.findElement(By.cssSelector("a.s-header-item__link.s-header-item__link--user")).getText());
+
         Assert.assertTrue(driver.findElement(By.cssSelector("a.s-header-item__link.s-header-item__link--friends.s-nav-rootlink-feed")).isDisplayed());
     }
 

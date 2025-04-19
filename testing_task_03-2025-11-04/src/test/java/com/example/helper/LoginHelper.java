@@ -5,6 +5,8 @@ import com.example.model.UserData;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 
+import static java.lang.Thread.sleep;
+
 public class LoginHelper extends HelperBase {
     public LoginHelper(ApplicationManager appManager) {
         super(appManager);
@@ -38,6 +40,11 @@ public class LoginHelper extends HelperBase {
     }
 
     public void checkUserIsLoggedIn() {
+        try {
+            sleep(3000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         Assert.assertTrue(isElementPresent(By.cssSelector("a.s-header-item__link.s-header-item__link--friends.s-nav-rootlink-feed")));
         Assert.assertTrue(isElementPresent(By.cssSelector("a.s-header-item__link.s-header-item__link--user")));
     }

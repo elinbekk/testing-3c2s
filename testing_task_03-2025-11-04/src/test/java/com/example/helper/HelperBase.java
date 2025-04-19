@@ -22,7 +22,6 @@ public class HelperBase {
         }
     }
 
-
     protected boolean isAlertPresent() {
         try {
             driver.switchTo().alert();

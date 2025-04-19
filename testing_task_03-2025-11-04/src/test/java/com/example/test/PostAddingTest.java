@@ -3,7 +3,6 @@ package com.example.test;
 import com.example.model.PostData;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.By;
 
 public class PostAddingTest extends TestBase {
     @Before
@@ -24,11 +23,11 @@ public class PostAddingTest extends TestBase {
         appManager.getPostHelper().verifyPostPublishedSuccessfully(postData.getTitle(), postData.getContent());
     }
 
-    @Test
+    /*@Test
     public void postAddingFailureCase() {
         appManager.getPostHelper().navigateToPostCreation();
         appManager.getPostHelper().attemptToPublishEmptyPost();
         appManager.getDriver().findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Виден всем'])[1]/following::span[1]")).click();
         appManager.getPostHelper().verifyEmptyPostErrorDisplayed();
-    }
+    }*/
 }

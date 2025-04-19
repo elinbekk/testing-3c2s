@@ -5,6 +5,8 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import static java.lang.Thread.sleep;
+
 public class PostHelper extends HelperBase {
     public PostHelper(ApplicationManager appManager) {
         super(appManager);
@@ -45,6 +47,11 @@ public class PostHelper extends HelperBase {
         String contentSelector = "div.aentry-post__text--view";
         By postTitle = By.cssSelector(titleSelector);
 
+        try {
+            sleep(3000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         Assert.assertEquals(expectedTitle, driver.findElement(postTitle).getText());
         Assert.assertTrue(driver.findElement(By.cssSelector(contentSelector)).getText().contains(expectedContent));
     }

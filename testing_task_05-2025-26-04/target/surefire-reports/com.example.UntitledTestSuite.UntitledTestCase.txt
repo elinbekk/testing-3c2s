@@ -1,0 +1,17 @@
+-------------------------------------------------------------------------------
+Test set: com.example.UntitledTestSuite.UntitledTestCase
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 65.557 s <<< FAILURE! - in com.example.UntitledTestSuite.UntitledTestCase
+testUntitledTestCase(com.example.UntitledTestSuite.UntitledTestCase)  Time elapsed: 65.493 s  <<< ERROR!
+org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"link text","selector":"Войти"}
+  (Session info: chrome=135.0.7049.52)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.12.10-100.fc40.x86_64', java.version: '23.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [9eb6b70bf02434a2728f6e9afa287ca8, findElement {using=link text, value=Войти}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.52, chrome: {chromedriverVersion: 135.0.7049.42 (0f351bbd2617..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:35907}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:35907/devtoo..., se:cdpVersion: 135.0.7049.52, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 9eb6b70bf02434a2728f6e9afa287ca8
+	at com.example.UntitledTestSuite.UntitledTestCase.testUntitledTestCase(UntitledTestCase.java:33)
+
